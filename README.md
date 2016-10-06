@@ -54,10 +54,10 @@ Template have this values configured, but disabled by default.
 
 Testing
 -------
-To test that everything work use `zabbix_get` (from some time this is in it's own package, so do `apt-get/yum install zabbix-get`):
+To test that everything works use the `zabbix_agentd -t` to query the statistics :
 ```bash
 # view result of low level discovery
-zabbix_get -s 127.0.0.1 -k "custom.vfs.discover_disks"
+zabbix_agentd -t "custom.vfs.discover_disks"
 # view statistics for 'sda' disk
-zabbix_get -s 127.0.0.1 -k "custom.vfs.dev.write.sectors[sda]"
+zabbix_agentd -t "custom.vfs.dev.write.sectors[sda]"
 ```
